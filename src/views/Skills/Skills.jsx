@@ -195,7 +195,7 @@ const Skills = () => {
                     src={design}
                     sx={{
                       objectFit: 'contain',
-                      height: '100px',
+                      height: '60px',
                     }}
                   />
                   <Typography

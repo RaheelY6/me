@@ -86,7 +86,7 @@ const Hero = () => {
               fontWeight={900}
               fontSize={styles.fontSize.lg}
             >
-              Your Amazong Guy.
+              Your Amazon Guy.
             </Typography>
             <Typography color={'white'} fontSize={{ lg: 20, xs: 10 }}>
               Elevating businesses on Amazon through smart strategies and

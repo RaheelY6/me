@@ -23,7 +23,7 @@
 }
 
 .menu-button {
-  background-color: #e69549;
+  background-color: #ffda2d;
   height: 60px;
   width: 60px;
   border-radius: 100%;
@@ -43,14 +43,14 @@
 }
 
 .line-1-animate {
-  background-color: #e69549;
+  background-color: #ffda2d;
   transform: rotate(45deg) translate(5px, 6px);
   transition: all ease 0.3s;
   width: 60%;
 }
 
 .line-2-animate {
-  background-color: #e69549;
+  background-color: #ffda2d;
   transform: rotate(-45deg) translate(3px, -3px);
   transition: all ease 0.3s;
   width: 60%;

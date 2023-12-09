@@ -1,0 +1,67 @@
+* {
+  font-family: 'Alliance No.1', sans-serif;
+}
+
+.box {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all ease-in-out 1s;
+}
+.animate {
+  opacity: 1;
+  transform: translateY(0); /* Move the box to its original position (0%) */
+}
+
+.left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all ease-in-out 1s;
+}
+.left-animate {
+  opacity: 1;
+  transform: translateX(0); /* Move the box to its original position (0%) */
+}
+
+.right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all ease-in-out 1s;
+}
+.right-animate {
+  opacity: 1;
+  transform: translateX(0); /* Move the box to its original position (0%) */
+}
+
+.hero-right {
+  opacity: 0;
+  right: 100%;
+  transition: all ease-in-out 1.5s;
+}
+
+.hero-right-animate {
+  opacity: 1;
+  right: 18em;
+}
+
+.hover-style:hover {
+  background-color: red;
+  background-color: #e69549;
+  width: fit-content;
+  padding-left: 1em;
+  padding-right: 1em;
+  transform: translateX(24px);
+}
+
+.hover-wrapper:hover .hover-style {
+  transition: all ease-in-out 0.1s;
+}
+
+.hero-left {
+  opacity: 0;
+  left: 100%;
+  transition: all ease-in-out 1.5s;
+}
+.hero-left-animate {
+  opacity: 1;
+  left: 0;
+}

@@ -2,12 +2,11 @@ import { Box, Stack, Typography } from '@mui/material';
 import Section from '../../components/shared/Section';
 import { styles } from '../../style/styles';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
-import upworkReview from 'src/assets/upwork_review.png';
 import sale_1 from 'src/assets/work/sale_1.jpeg';
 import sale_3 from 'src/assets/work/sale_3.jpeg';
 import sale_4 from 'src/assets/work/sale_4.jpeg';
 import sale_5 from 'src/assets/work/sale_5.jpeg';
+import sale_6 from 'src/assets/work/sale_6.jpeg';
 import tiktok from 'src/assets/work/tiktok.jpeg';
 import Modal from './Modal';
 import { useState } from 'react';
@@ -31,6 +30,10 @@ const list = [
   },
   {
     id: 4,
+    src: sale_6,
+  },
+  {
+    id: 5,
     src: tiktok,
   },
 ];

@@ -86,11 +86,10 @@ const Hero = () => {
               fontWeight={900}
               fontSize={styles.fontSize.lg}
             >
-              Your Amazon Guy.
+              E-Comm Virtuoso.
             </Typography>
             <Typography color={'white'} fontSize={{ lg: 20, xs: 10 }}>
-              Elevating businesses on Amazon through smart strategies and
-              efficient operations for sustained growth.
+              Orchestrating Amazon, TikTok, and Walmart
             </Typography>
           </Stack>
           <Box

@@ -2,44 +2,81 @@ import { Box, Stack, Typography } from '@mui/material';
 import Section from '../../components/shared/Section';
 import { styles } from '../../style/styles';
 import { useInView } from 'react-intersection-observer';
-import sale_1 from 'src/assets/work/sale_1.jpeg';
-import sale_3 from 'src/assets/work/sale_3.jpeg';
-import sale_4 from 'src/assets/work/sale_4.jpeg';
-import sale_5 from 'src/assets/work/sale_5.jpeg';
-import sale_6 from 'src/assets/work/sale_6.jpeg';
-import tiktok from 'src/assets/work/tiktok.jpeg';
+import amazon1 from 'src/assets/work/amazon/amazon1.jpeg';
+import amazon2 from 'src/assets/work/amazon/amazon2.jpeg';
+import amazon3 from 'src/assets/work/amazon/amazon3.jpeg';
+import amazon4 from 'src/assets/work/amazon/amazon4.jpeg';
+import tiktok1 from 'src/assets/work/tiktok/tiktok1.jpeg';
+import tiktok2 from 'src/assets/work/tiktok/tiktok2.png';
+import tiktok3 from 'src/assets/work/tiktok/tiktok3.png';
+import tiktok4 from 'src/assets/work/tiktok/tiktok4.png';
+import tiktok5 from 'src/assets/work/tiktok/tiktok5.png';
+import tiktok6 from 'src/assets/work/tiktok/tiktok6.jpeg';
+import walmart1 from 'src/assets/work/walmart/walmart1.jpeg';
 import Modal from './Modal';
 import { useState } from 'react';
 
 const list = [
   {
     id: 0,
-    src: sale_1,
+    src: amazon1,
+    type: 'amazon',
   },
   {
     id: 1,
-    src: sale_3,
+    src: amazon2,
+    type: 'amazon',
   },
   {
     id: 2,
-    src: sale_4,
+    src: amazon3,
+    type: 'amazon',
   },
   {
     id: 3,
-    src: sale_5,
+    src: amazon4,
+    type: 'amazon',
   },
   {
     id: 4,
-    src: sale_6,
+    src: tiktok1,
+    type: 'tiktok',
   },
   {
     id: 5,
-    src: tiktok,
+    src: tiktok2,
+    type: 'tiktok',
+  },
+  {
+    id: 6,
+    src: tiktok3,
+    type: 'tiktok',
+  },
+  {
+    id: 7,
+    src: tiktok4,
+    type: 'tiktok',
+  },
+  {
+    id: 8,
+    src: tiktok5,
+    type: 'tiktok',
+  },
+  {
+    id: 9,
+    src: tiktok6,
+    type: 'tiktok',
+  },
+  {
+    id: 10,
+    src: walmart1,
+    type: 'walmart',
   },
 ];
 
 const Upwork = () => {
   const [open, setOpen] = useState(false);
+  const [type, setType] = useState('all');
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -66,16 +103,37 @@ const Upwork = () => {
     >
       <Section>
         <Box className={`box ${inView ? 'animate' : ''}`}>
-          <Typography my={5} fontSize={styles.fontSize.md}>
-            Through meticulous PPC (Pay-Per-Click) campaigns, I've orchestrated
-            a sales surge like never before. By targeting precise keywords,
-            optimizing ad placements, and refining targeting parameters, I've
-            maximized visibility and conversion rates. This deliberate approach
-            has led to exceptional results, driving sales skyward while ensuring
-            a prominent position in the competitive Amazon marketplace. Curious
-            about the secret behind this success? Let's chat and unlock the
-            power of PPC for your Amazon journey!
-          </Typography>
+          <Stack
+            sx={{
+              gap: 2,
+              width: '100%',
+              m: 'auto',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {['all', 'amazon', 'tiktok', 'walmart'].map((filterType) => (
+              <Box
+                key={filterType}
+                sx={{
+                  py: 1,
+                  px: 4,
+                  textAlign: 'center',
+                  borderRadius: 20,
+                  border: '1px solid grey',
+                  cursor: 'pointer',
+                  backgroundColor:
+                    type === filterType ? 'black' : 'transparent',
+                  color: type === filterType ? 'white' : 'black',
+                  transition: 'background-color 0.3s ease-in-out',
+                }}
+                onClick={() => setType(filterType)}
+              >
+                {filterType.charAt(0).toUpperCase() + filterType.slice(1)}
+              </Box>
+            ))}
+          </Stack>
           <Stack
             mt={5}
             sx={{
@@ -84,17 +142,21 @@ const Upwork = () => {
               flexFlow: 'wrap',
             }}
           >
-            {list.map((item) => (
-              <Card
-                key={item.id}
-                src={item.src}
-                title={item.title}
-                onClick={() => {
-                  setSelectedItem(item.id);
-                  handleClickOpen();
-                }}
-              />
-            ))}
+            {list.map((item) => {
+              if (type !== 'all' && type !== item.type) return null; // Fixed condition
+
+              return (
+                <Card
+                  key={item.id}
+                  src={item.src}
+                  title={item.title}
+                  onClick={() => {
+                    setSelectedItem(item.id);
+                    handleClickOpen();
+                  }}
+                />
+              );
+            })}
           </Stack>
         </Box>
       </Section>

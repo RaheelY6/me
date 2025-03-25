@@ -102,7 +102,7 @@ const Upwork = () => {
       }}
     >
       <Section>
-        <Box className={`box ${inView ? 'animate' : ''}`}>
+        <Box className={``}>
           <Stack
             sx={{
               gap: 2,
@@ -111,6 +111,7 @@ const Upwork = () => {
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'center',
+              flexWrap: 'wrap',
             }}
           >
             {['all', 'amazon', 'tiktok', 'walmart'].map((filterType) => (
